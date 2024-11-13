@@ -1,8 +1,13 @@
 import React from 'react'
+import { motion } from 'motion/react';
 
 const Contact = () => {
     return (
-        <div className='container mx-auto py-4 pt-20 px-6 md:px-20 lg:px-32 my-20 w-full overflow-hidden' id='Testimonials'>
+        <motion.div
+            initial={{ opacity: 0, x: -200 }}
+            transition={{ duration: 1 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }} className='container mx-auto py-4 pt-20 px-6 md:px-20 lg:px-32 my-20 w-full overflow-hidden' id='Testimonials'>
             <div className='flex flex-col items-center justify-center'>
                 <h1 className='text-2xl sm:text-4xl font-bold mb-2'>Contact <span className='underline underline-offset-4 decoration-1 under font-light'>With Us</span></h1>
                 <p className='text-gray-500 max-w-80 text-center mb-8'>Ready to Make a Move? Let’s Build Your Future Together</p>
@@ -38,7 +43,7 @@ const Contact = () => {
                     <button className='bg-blue-600 text-white px-8 py-2 rounded'>Send Message</button>
                 </div>
             </form>
-        </div >
+        </motion.div >
     )
 }
 
